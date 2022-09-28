@@ -1,0 +1,57 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(252, 173, 26);
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgb(252, 173, 26);
+    height: 150px;
+    width: 150px;
+    margin-top: -75px;
+    margin-left: -75px;
+}
+
+.mercury {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: rgb(211, 211, 211);
+    height: 30px;
+    width: 30px;
+    margin-top: -25px;
+    margin-left: -15px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgb(211, 211, 211);
+}
+
+.venus {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: rgb(255, 238, 82);
+    height: 45px;
+    width: 45px;
+    margin-top: -20px;
+    margin-left: -20px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgb(255, 238, 82);
+}
+
+.earth {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: #3498db;
+    height: 45px;
+    width: 45px;
+    margin-top: -25px;
+    margin-left: -25px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px #3498db;
+}
