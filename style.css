@@ -4,31 +4,28 @@ html, body {
     background-color: rgb(0, 0, 0);
 }
 
-.canvas {
+.system {
     display: flex;
-    height: 200vh;
     justify-content: center;
     align-items: center;
 }
 
-.canvas > div {
-    position: absolute;
+.sun {
+    background-color: rgb(252, 173, 26);
+    box-shadow: 0 0 100px rgb(252, 173, 26);
+    height: 100px;
+    width: 100px;
 }
 
-.sun {
-    z-index: 0;
-    background-color: rgb(252, 173, 26);
+.planet {
     border-radius: 50%;
-    box-shadow: 0 0 100px rgb(252, 173, 26);
-    height: 150px;
-    width: 150px;
+    position: absolute;
 }
 
 .mercury {
     background-color: rgb(211, 211, 211);
     height: 3.8px;
     width: 3.8px;
-    border-radius: 50%;
     box-shadow: 0 0 10px rgb(211, 211, 211);
 }
 
@@ -36,7 +33,6 @@ html, body {
     background-color: rgb(255, 238, 82);
     height: 9.5px;
     width: 9.5px;
-    border-radius: 50%;
     box-shadow: 0 0 10px rgb(255, 238, 82);
 }
 
@@ -44,7 +40,6 @@ html, body {
     background-color: rgb(52, 152, 219);
     height: 10px;
     width: 10px;
-    border-radius: 50%;
     box-shadow: 0 0 10px rgb(52, 152, 219);
 }
 
@@ -52,7 +47,6 @@ html, body {
     background-color: rgb(172, 172, 172);
     height: 2.7px;
     width: 2.7px;
-    border-radius: 50%;
     box-shadow: 0 0 5px rgb(172, 172, 172);
 }
 
@@ -60,23 +54,20 @@ html, body {
     background-color: rgb(182, 36, 0);
     height: 5.3px;
     width: 5.3px;
-    border-radius: 50%;
     box-shadow: 0 0 10px rgb(182, 36, 0);
 }
 
 .jupiter {
     background-color: rgb(187, 138, 3);
-    height: 112px;
-    width: 112px;
-    border-radius: 50%;
+    height: 72px;
+    width: 72px;
     box-shadow: 0 0 40px rgb(187, 138, 3);
 }
 
 .saturn {
     background-color: rgb(114, 84, 0);
-    height: 94.5px;
-    width: 94.5px;
-    border-radius: 50%;
+    height: 64.5px;
+    width: 64.5px;
     box-shadow: 0 0 40px rgb(114, 84, 0);
 }
 
@@ -84,7 +75,6 @@ html, body {
     background-color: rgb(22, 160, 133);
     height: 40px;
     width: 40px;
-    border-radius: 50%;
     box-shadow: 0 0 40px rgb(22, 160, 133);
 }
 
@@ -92,7 +82,6 @@ html, body {
     background-color: rgb(8, 68, 129);
     height: 38.8px;
     width: 38.8px;
-    border-radius: 50%;
     box-shadow: 0 0 40px rgb(8, 68, 129);
 }
 
@@ -100,116 +89,5 @@ html, body {
     background-color: rgb(143, 178, 253);
     height: 2px;
     width: 2px;
-    border-radius: 50%;
     box-shadow: 0 0 40px rgb(143, 178, 253);
-}
-
-.mercury-orbit {
-    width: 200px;
-    height: 200px;
-    /* border-width: 2px;
-    border-style: dotted;
-    border-color:  rgb(211, 211, 211); */
-    border-radius: 50%;
-    animation: counter-clockwise-spin 8.797s linear infinite;
-}
-
-.venus-orbit {
-    width: 300px;
-    height: 300px;
-    /* border-width: 2px;
-    border-style: dotted;
-    border-color:  rgb(255, 238, 82); */
-    border-radius: 50%;
-    animation: clockwise-spin 22.47s linear infinite;
-}
-
-.earth-orbit {
-    width: 450px;
-    height: 450px;
-    /* border-width: 2px;
-    border-style: dotted;
-    border-color:  rgb(52, 152, 219); */
-    border-radius: 50%;
-    animation: counter-clockwise-spin 36.526s linear infinite;
-}
-
-.moon-orbit {
-    width: 50px;
-    height: 50px;
-    margin-top: -25px;
-    margin-left: -25px;
-    border-radius: 50%;
-    animation: counter-clockwise-spin 2.7s linear infinite;
-}
-
-.mars-orbit {
-    width: 550px;
-    height: 550px;
-    /* border-width: 2px;
-    border-style: dotted;
-    border-color:  rgb(182, 36, 0); */
-    border-radius: 50%;
-    animation: counter-clockwise-spin 68.62s linear infinite;
-}
-
-.jupiter-orbit {
-    width: 800px;
-    height: 800px;
-    /* border-width: 2px;
-    border-style: dotted;
-    border-color:  rgb(187, 138, 3); */
-    border-radius: 50%;
-    animation: counter-clockwise-spin 432.89s linear infinite;
-}
-
-.saturn-orbit {
-    width: 1050px;
-    height: 1050px;
-    /* border-width: 2px;
-    border-style: dotted;
-    border-color:  rgb(114, 84, 0); */
-    border-radius: 50%;
-    animation: counter-clockwise-spin 1075.29s linear infinite;
-}
-
-.uranus-orbit {
-    width: 1200px;
-    height: 1200px;
-    /* border-width: 2px;
-    border-style: dotted;
-    border-color:  rgb(22, 160, 133); */
-    border-radius: 50%;
-    animation: clockwise-spin 3066.365s linear infinite;
-}
-
-.neptune-orbit {
-    width: 1450px;
-    height: 1450px;
-    /* border-width: 2px;
-    border-style: dotted;
-    border-color:  rgb(8, 68, 129); */
-    border-radius: 50%;
-    animation: counter-clockwise-spin 6014.835s linear infinite;
-}
-
-.pluto-orbit {
-    width: 1600px;
-    height: 1600px;
-    /* border-width: 2px;
-    border-style: dotted;
-    border-color:  rgb(143, 178, 253); */
-    border-radius: 50%;
-    animation: counter-clockwise-spin 9070.25s linear infinite;
-}
-
-@keyframes counter-clockwise-spin {
-    100% {
-        transform: rotate(-360deg)
-    }
-}
-@keyframes clockwise-spin {
-    100% {
-        transform: rotate(360deg)
-    }
 }
