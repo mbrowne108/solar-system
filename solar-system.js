@@ -103,7 +103,7 @@ function update(planet) {
     planet.el.style.top = `${Math.sin(planet.theta) * planet.radius + sunY + 50}px`
 
     ctx.lineTo(parseInt(planet.el.style.left), parseInt(planet.el.style.top))
-    ctx.strokeStyle = "#ff0000"
+    ctx.strokeStyle = "#ffffff"
     ctx.stroke()
 
     if (planet.hasMoon) {
