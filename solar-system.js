@@ -3,6 +3,11 @@ const sun = document.querySelector('.sun')
 const sunX = window.innerWidth / 2 - 50
 const sunY = window.innerHeight / 2 - 50
 
+const canvas = document.getElementById("canvas");
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+const ctx = canvas.getContext("2d");
+
 sun.style.left = `${sunX}px`
 sun.style.top = `${sunY}px`
 
@@ -90,20 +95,23 @@ const planets = [
 ]
 
 function update(planet) {
+    ctx.beginPath();
+    ctx.moveTo(parseInt(planet.el.style.left), parseInt(planet.el.style.top))
+
     planet.theta -= planet.speed
     planet.el.style.left = `${Math.cos(planet.theta) * planet.radius + sunX + 50}px`
     planet.el.style.top = `${Math.sin(planet.theta) * planet.radius + sunY + 50}px`
+
+    ctx.lineTo(parseInt(planet.el.style.left), parseInt(planet.el.style.top))
+    ctx.strokeStyle = "#ff0000"
+    ctx.stroke()
+
     if (planet.hasMoon) {
         moon.theta -= moon.speed
         moon.el.style.left = `${Math.cos(moon.theta) * moon.radius + parseInt(planet.el.style.left)}px`
         moon.el.style.top = `${Math.sin(moon.theta) * moon.radius + parseInt(planet.el.style.top)}px`
     }
-}
 
-function updateMoon(moon) {
-    moon.theta -= moon.speed
-    moon.el.style.left = `${Math.cos(moon.theta) * moon.radius + earth.el.style.left}px`
-    moon.el.style.top = `${Math.sin(moon.theta) * moon.radius + earth.el.style.top}px`
 }
 
 setInterval(() => {
